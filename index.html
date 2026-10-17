@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Main Street Boulders · 24/7 Bouldering in Flagstaff (design concept)</title>
+<meta name="description" content="Main Street Boulders: bouldering and training gym at 1519 Main St, Suite 107, Flagstaff, AZ. Kilter, Tension, Moonboard, workout room. 24/7 for Premium members.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="favicon.ico">
+<style>
+:root{--o:#f0a541;--o2:#ffaa1d;--g:#2c3d2d;--g2:#344735;--tan:#f3e7d6;--ink:#1c1f1c;--mut:#5b625b;--line:#e3ddd3;--bg:#fbf9f6;--r:8px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:52px}
+body{font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Inter,sans-serif;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased}
+a{color:var(--g2);text-underline-offset:2px}
+img{display:block;max-width:100%}
+.w{max-width:1040px;margin:0 auto;padding:0 16px}
+/* nav */
+.top{position:sticky;top:0;z-index:10;background:var(--g);color:#fff;border-bottom:2px solid var(--o)}
+.top .w{display:flex;align-items:center;gap:14px;height:48px}
+.top .logo img{height:30px;width:auto}
+.top nav{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;flex:1;-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent)}
+.top nav::-webkit-scrollbar{display:none}
+.top nav a{color:#e9efe9;text-decoration:none;font-size:13.5px;font-weight:500;padding:6px 9px;border-radius:6px;white-space:nowrap}
+.top nav a:hover{background:rgba(255,255,255,.1);color:#fff}
+.btn{display:inline-block;background:var(--o);color:#1c1f1c;font-weight:650;font-size:13.5px;text-decoration:none;padding:7px 12px;border-radius:6px;white-space:nowrap;border:0}
+.btn:hover{background:var(--o2)}
+.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--ink)}
+.btn.ghost:hover{border-color:var(--g2)}
+.top .btn{padding:6px 10px}
+@media(max-width:640px){.top .logo img{height:24px}.top .w{gap:8px;padding:0 10px}.top nav{display:none}.top .cta-desk{display:none}}
+@media(min-width:641px){.subnav{display:none}}
+.subnav{position:sticky;top:50px;z-index:9;background:#fff;border-bottom:1px solid var(--line)}
+.subnav .w{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding:6px 10px}
+.subnav .w::-webkit-scrollbar{display:none}
+.subnav a{font-size:13px;font-weight:550;color:var(--ink);text-decoration:none;padding:4px 10px;border:1px solid var(--line);border-radius:99px;white-space:nowrap}
+/* intro */
+.intro{background:var(--g);color:#fff;padding:18px 0 16px}
+.intro h1{font-size:22px;line-height:1.25;font-weight:700;letter-spacing:-.01em}
+.intro h1 span{color:var(--o)}
+.intro p{color:#cfd8cf;font-size:14.5px;margin-top:6px;max-width:640px}
+.facts{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.chip{font-size:12.5px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:99px;padding:3px 10px;color:#fff}
+.chip b{color:var(--o);font-weight:650}
+.intro .acts{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.intro .btn.ghost{color:#fff;border-color:rgba(255,255,255,.3)}
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-top:14px}
+.strip img{width:100%;height:110px;object-fit:cover;border-radius:6px}
+@media(max-width:640px){.strip{grid-template-columns:repeat(2,1fr)}.strip img{height:96px}.intro h1{font-size:20px}}
+/* sections */
+section{padding:22px 0;border-bottom:1px solid var(--line)}
+h2{font-size:18px;font-weight:700;letter-spacing:-.01em;display:flex;flex-wrap:wrap;align-items:baseline;column-gap:8px;row-gap:0}
+h2 small{font-size:12.5px;font-weight:500;color:var(--mut)}
+h3{font-size:14.5px;font-weight:650;margin-bottom:4px}
+.lead{color:var(--mut);font-size:14px;margin-top:2px}
+.grid{display:grid;gap:10px;margin-top:12px}
+.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:760px){.g3{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.g2,.g3{grid-template-columns:1fr}}
+.box{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+ul.tight{list-style:none}
+ul.tight li{padding:3px 0 3px 14px;position:relative;font-size:14px}
+ul.tight li::before{content:"";position:absolute;left:0;top:11px;width:6px;height:6px;border-radius:2px;background:var(--o)}
+ul.tight li span{color:var(--mut)}
+.note{font-size:12.5px;color:var(--mut);margin-top:8px}
+/* price tables */
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:6px 0;border-bottom:1px solid #f0ebe3;vertical-align:top}
+td.p{text-align:right;font-weight:650;white-space:nowrap;padding-left:10px}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--mut);font-weight:600}
+tr:last-child td{border-bottom:0}
+td small{display:block;color:var(--mut);font-size:12.5px}
+.tag{display:inline-block;font-size:11px;font-weight:650;background:var(--tan);color:#6b4a14;border-radius:4px;padding:1px 6px;margin-left:4px;vertical-align:1px}
+.box .btn{margin-top:10px}
+.box .btns{display:flex;gap:6px;flex-wrap:wrap}
+details{margin-top:10px;font-size:14px}
+details summary{cursor:pointer;font-weight:600;color:var(--g2)}
+details ul{margin-top:6px}
+/* steps */
+ol.steps{list-style:none;counter-reset:s;display:grid;gap:8px;margin-top:12px}
+ol.steps li{counter-increment:s;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:10px 12px 10px 44px;position:relative;font-size:14px}
+ol.steps li::before{content:counter(s);position:absolute;left:12px;top:10px;width:22px;height:22px;border-radius:50%;background:var(--g);color:#fff;font-size:12px;font-weight:700;display:grid;place-items:center}
+ol.steps li b{display:block;font-size:14.5px}
+/* hours */
+.hours td:first-child{color:var(--mut);width:46%}
+.hours td{font-size:14px}
+.badge{display:inline-block;font-size:12px;font-weight:650;padding:2px 8px;border-radius:99px;background:#e6efe6;color:var(--g2)}
+.badge.o{background:var(--tan);color:#6b4a14}
+.loc img{height:120px;width:100%;object-fit:cover;border-radius:6px;margin-bottom:10px}
+.loc .meta{font-size:14px;line-height:1.6}
+footer{background:var(--g);color:#cfd8cf;font-size:13px;padding:18px 0 22px}
+footer a{color:#fff}
+footer .w{display:grid;gap:6px}
+footer .demo{margin-top:6px;padding-top:10px;border-top:1px solid rgba(255,255,255,.15);font-size:12px;color:#aab6aa}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="w">
+    <a class="logo" href="#top" aria-label="Main Street Boulders home"><img src="img/logo.png" alt="Main Street Boulders, powered by Flagstaff Climbing" width="600" height="136"></a>
+    <nav aria-label="Main">
+      <a href="#amenities">Amenities</a>
+      <a href="#memberships">Memberships</a>
+      <a href="#first-visit">First Visit</a>
+      <a href="#hours">Hours</a>
+      <a href="#locations">Locations</a>
+    </nav>
+    <a class="btn cta-desk" href="https://www.waiverking.com/print/17145" target="_blank" rel="noopener">Sign waiver</a>
+    <a class="btn" style="margin-left:auto" href="https://clients.mindbodyonline.com/classic/ws?studioid=31814&amp;stype=41&amp;sTG=48&amp;prodId=15142" target="_blank" rel="noopener">Day pass</a>
+  </div>
+</header>
+<div class="subnav" aria-label="Sections">
+  <div class="w">
+    <a href="#amenities">Amenities</a><a href="#memberships">Memberships</a><a href="#first-visit">First Visit</a><a href="#hours">Hours</a><a href="#locations">Locations</a>
+  </div>
+</div>
+
+<div class="intro" id="top">
+  <div class="w">
+    <h1>Bouldering &amp; training in Sunnyside, Flagstaff. <span>Premium members: open 24/7.</span></h1>
+    <p>Old school meets new school. Boards, dense setting geared toward outdoor climbing, and a separate workout room. Sister gym to Flagstaff Climbing, serving Flagstaff for 30 years.</p>
+    <div class="facts">
+      <span class="chip"><b>Open</b> Tue–Thu 6–10 pm</span>
+      <span class="chip"><b>24/7</b> Premium members</span>
+      <span class="chip"><b>Day pass</b> $18 + tax</span>
+      <span class="chip"><b>Thursdays</b> $14 incl. shoes</span>
+    </div>
+    <div class="acts">
+      <a class="btn" href="#memberships">Passes &amp; memberships</a>
+      <a class="btn ghost" href="#first-visit">First visit</a>
+    </div>
+    <div class="strip">
+      <img src="img/room.jpg" alt="Main bouldering room at Main Street Boulders" loading="eager">
+      <img src="img/boards.jpg" alt="Training board wall" loading="lazy">
+      <img src="img/climber.jpg" alt="Climber on the bouldering wall" loading="lazy">
+      <img src="img/workout.jpg" alt="Dedicated workout room with rower and rack" loading="lazy">
+    </div>
+  </div>
+</div>
+
+<main>
+<section id="amenities">
+  <div class="w">
+    <h2>Amenities <small>Walls by Vertical Solutions &amp; Lemur Adjustable Walls · up to 16 ft · bouldering only</small></h2>
+    <div class="grid g3">
+      <div class="box">
+        <h3>Board room</h3>
+        <ul class="tight">
+          <li>Kilter Board 12×12 <span>· 5°–70°</span></li>
+          <li>Kilter Fullride 8×12 <span>· 10°–60°</span></li>
+          <li>Tension Board 2, 8×12 <span>· 15°–60°</span></li>
+          <li>Moonboard <span>· original 2016 setup</span></li>
+          <li>Campus board</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Workout room <span class="tag">separate · low chalk</span></h3>
+        <ul class="tight">
+          <li>2 Rogue bench &amp; squat stations, Rep functional trainer</li>
+          <li>Rogue free weights, kettlebells, med balls</li>
+          <li>Spin bikes, treadmills, Concept2 rower</li>
+          <li>Training cage: stall bars, dip, pull-up bars, hangboards, TRX</li>
+          <li>Rings, jump boxes, bands, mirrors, own sound system</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Also here</h3>
+        <ul class="tight">
+          <li>24/7 access with Premium membership</li>
+          <li>Community workspace room with A/C</li>
+          <li>Free Wi-Fi</li>
+          <li>Shoe rental (the only gear you need)</li>
+          <li>Small shop: bars, drinks, tape, chalk</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="memberships">
+  <div class="w">
+    <h2>Passes &amp; memberships <small>Prices as listed on mainstreetboulders.com</small></h2>
+    <div class="grid g3">
+      <div class="box">
+        <h3>Passes <span class="tag">open hours only</span></h3>
+        <table>
+          <tr><td>Day pass</td><td class="p">$18 + tax</td></tr>
+          <tr><td>$14 Thursdays<small>Day pass, 6–10 pm, shoes included</small></td><td class="p">$14 + tax</td></tr>
+          <tr><td>Age 4 &amp; under</td><td class="p">$5 + tax</td></tr>
+          <tr><td>Shoe rental</td><td class="p">$5 + tax</td></tr>
+          <tr><td>2-week trial<small>Shoes incl. · once per customer</small></td><td class="p">$39</td></tr>
+          <tr><td>10-visit pass<small>Shoes incl.</small></td><td class="p">$149</td></tr>
+          <tr><td>30-day pass<small>Shoes incl. · add 24/7 for +$20</small></td><td class="p">$69</td></tr>
+        </table>
+        <div class="btns">
+          <a class="btn" href="https://clients.mindbodyonline.com/classic/ws?studioid=31814&amp;stype=41&amp;sTG=48&amp;prodId=15142" target="_blank" rel="noopener">Day pass</a>
+          <a class="btn ghost" href="https://clients.mindbodyonline.com/classic/ws?studioid=31814&amp;stype=41&amp;sTG=48&amp;prodId=15368" target="_blank" rel="noopener">Trial</a>
+          <a class="btn ghost" href="https://clients.mindbodyonline.com/classic/ws?studioid=31814&amp;stype=41&amp;sTG=48&amp;prodId=15366" target="_blank" rel="noopener">10-visit</a>
+          <a class="btn ghost" href="https://clients.mindbodyonline.com/classic/ws?studioid=31814&amp;stype=41&amp;sTG=48&amp;prodId=15367" target="_blank" rel="noopener">30-day</a>
+        </div>
+      </div>
+      <div class="box">
+        <h3>MSB Monthly <span class="tag">no minimum</span></h3>
+        <table>
+          <tr><th></th><th style="text-align:right">Monthly</th></tr>
+          <tr><td>1 person</td><td class="p">$70</td></tr>
+          <tr><td>2 people</td><td class="p">$123</td></tr>
+          <tr><td>Family<small>2 adults max + kids</small></td><td class="p">$160</td></tr>
+          <tr><td>Joining fee<small>1 person / 2+ people</small></td><td class="p">$30 / $60</td></tr>
+          <tr><td>Hold</td><td class="p">$10/mo</td></tr>
+        </table>
+        <p class="note">Prepay 12 months for 15% off (contact the gym). Autopay (EFT).</p>
+        <a class="btn" href="https://clients.mindbodyonline.com/classic/ws?studioid=31814&amp;stype=40&amp;prodId=177" target="_blank" rel="noopener">Start monthly</a>
+      </div>
+      <div class="box">
+        <h3>MSB Weekly <span class="tag">4-week minimum</span></h3>
+        <table>
+          <tr><th></th><th style="text-align:right">Weekly</th></tr>
+          <tr><td>1 person</td><td class="p">$21</td></tr>
+          <tr><td>2 people</td><td class="p">$35</td></tr>
+          <tr><td>Family<small>2 adults max + kids</small></td><td class="p">$48</td></tr>
+          <tr><td>Joining fee</td><td class="p">None</td></tr>
+          <tr><td>Hold<small>after first 4 weeks</small></td><td class="p">$3/wk</td></tr>
+        </table>
+        <p class="note">Switch to monthly after 4 weeks and the joining fee is waived. Autopay (EFT).</p>
+        <a class="btn" href="https://clients.mindbodyonline.com/classic/ws?studioid=31814&amp;stype=40&amp;prodId=183" target="_blank" rel="noopener">Start weekly</a>
+      </div>
+    </div>
+
+    <div class="grid g2">
+      <div class="box">
+        <h3>Member benefits</h3>
+        <ul class="tight">
+          <li>1 free guest pass per month (rental gear included). Guests are OK after hours too, with you</li>
+          <li>15% off in the Downtown Crag gear shop, plus member-only sales</li>
+          <li>20% off climbing instruction</li>
+          <li>Select free clinics, programs and group fitness classes</li>
+          <li>50% off next month's dues for helping at a Northern Arizona Climbers Coalition trail day</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Getting 24/7 access</h3>
+        <ul class="tight">
+          <li>Buy an MSB Weekly or Monthly membership. Your first week or month is $0</li>
+          <li><a href="https://www.mainstreetboulders.com/contact-hours" target="_blank" rel="noopener">Contact the gym</a> to switch to Premium</li>
+          <li>Key fob is $10 and ready within 48 hrs on business days (no weekend or holiday setups)</li>
+          <li>Dues start when your fob is ready</li>
+        </ul>
+        <details>
+          <summary>After-hours rules</summary>
+          <ul class="tight">
+            <li>Premium members only. Your fob is for you, one person per entry</li>
+            <li>Scan the fob and look up at the camera. No need to scan out. Secure the door when you leave</li>
+            <li>No staff on duty, so climbing with a partner is strongly encouraged. There's a phone at the front desk for emergencies</li>
+            <li>Under 18 only with a parent or guardian on the same Premium membership</li>
+            <li>Guests must stay with their member host</li>
+          </ul>
+        </details>
+      </div>
+    </div>
+    <p class="note">Want both gyms? A DTC + MSB membership adds Flagstaff Climbing's Downtown Crag: <a href="https://www.flagstaffclimbing.com/membership" target="_blank" rel="noopener">see options</a>. For same-day passes that include both gyms, see the <a href="https://www.flagstaffclimbing.com/rates" target="_blank" rel="noopener">Downtown Crag rates</a>. Already a member? <a href="https://clients.mindbodyonline.com/classic/ws?studioid=31814&amp;stype=-2&amp;subTab=info" target="_blank" rel="noopener">Log in to Mindbody</a>. To change your membership, email <a href="mailto:membership@flagstaffclimbing.com">membership@flagstaffclimbing.com</a> at least 7 days before billing. Full terms are on the <a href="https://www.mainstreetboulders.com/24/7-membership" target="_blank" rel="noopener">official membership page</a>.</p>
+  </div>
+</section>
+
+<section id="first-visit">
+  <div class="w">
+    <h2>First visit <small>No experience or membership needed</small></h2>
+    <ol class="steps">
+      <li><b>Sign the waiver online</b>Saves time at the desk. You can also sign when you arrive. Under 18? A parent or legal guardian must sign. <br><a class="btn" style="margin-top:8px" href="https://www.waiverking.com/print/17145" target="_blank" rel="noopener">Sign our waiver</a></li>
+      <li><b>Come during open hours</b>Tue–Thu, 6–10 pm. Day passes are for open hours. Thursdays are $14 with shoes included.</li>
+      <li><b>Check in at the front desk</b>Get your pass and rent shoes if you need them ($5). Per gym rules, climbers must pass a proficiency test or take a lesson by staff before using the facility.</li>
+      <li><b>Wear something you can move in</b>Athletic or loose clothes. No barefoot climbing, no food or drink on the pads. Gear goes in the cubbies. Kids under 12 need an adult with them.</li>
+    </ol>
+  </div>
+</section>
+
+<section id="hours">
+  <div class="w">
+    <h2>Hours</h2>
+    <div class="grid g2">
+      <div class="box">
+        <h3>Main Street Boulders</h3>
+        <table class="hours">
+          <tr><td>Tue · Wed · Thu</td><td><b>6–10 pm</b> <span class="badge">staffed · day passes</span></td></tr>
+          <tr><td>Every day, 24 hrs</td><td><span class="badge o">Premium members with key fob</span></td></tr>
+        </table>
+      </div>
+      <div class="box">
+        <h3>Flagstaff Climbing · Downtown Crag</h3>
+        <table class="hours">
+          <tr><td>Mon – Fri</td><td><b>10 am – 10 pm</b></td></tr>
+          <tr><td>Sat – Sun</td><td><b>Noon – 8 pm</b></td></tr>
+          <tr><td>Has</td><td>Rope climbing, bouldering, gear shop</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="locations">
+  <div class="w">
+    <h2>Locations &amp; contact</h2>
+    <div class="grid g2">
+      <div class="box loc">
+        <img src="img/room2.jpg" alt="Main Street Boulders bouldering room" loading="lazy">
+        <h3>Main Street Boulders</h3>
+        <div class="meta">
+          1519 Main Street, Suite 107, Flagstaff, AZ 86004<br>
+          Sunnyside, next to Paragon Athletics &amp; Wanderlust Brewing<br>
+          <a href="tel:+19286994246">928-699-4246</a> · <a href="mailto:info@flagstaffclimbing.com">info@flagstaffclimbing.com</a>
+        </div>
+        <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&amp;query=1519+Main+Street+Suite+107+Flagstaff+AZ+86004" target="_blank" rel="noopener">Directions</a>
+      </div>
+      <div class="box loc">
+        <h3>Flagstaff Climbing (Downtown Crag) <span class="tag">sister gym</span></h3>
+        <div class="meta">
+          205 S. San Francisco Street, Flagstaff, AZ 86001<br>
+          Historic downtown, a few blocks north of the university<br>
+          <a href="tel:+19285569909">928-556-9909</a> · <a href="https://www.flagstaffclimbing.com" target="_blank" rel="noopener">flagstaffclimbing.com</a>
+        </div>
+        <div class="btns"><a class="btn ghost" href="https://www.google.com/maps/search/?api=1&amp;query=205+S+San+Francisco+Street+Flagstaff+AZ+86001" target="_blank" rel="noopener">Directions</a></div>
+        <p class="note" style="margin-top:12px"><b>Other contacts</b><br>
+        Memberships: <a href="mailto:membership@flagstaffclimbing.com">membership@flagstaffclimbing.com</a><br>
+        Instruction &amp; youth teams: <a href="mailto:instruction@flagstaffclimbing.com">instruction@flagstaffclimbing.com</a><br>
+        Instagram: <a href="https://www.instagram.com/flagstaffclimbing/" target="_blank" rel="noopener">@flagstaffclimbing</a> · Gift cards: <a href="https://clients.mindbodyonline.com/classic/ws?studioid=31814&amp;stype=42" target="_blank" rel="noopener">buy online</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="w">
+    <div><b style="color:#fff">Main Street Boulders</b> · 1519 Main St, Suite 107, Flagstaff, AZ 86004 · <a href="tel:+19286994246">928-699-4246</a></div>
+    <div>Climbing is dangerous and may result in injury or death. All climbers need a signed waiver on file.</div>
+    <div class="demo">Unofficial design concept/demo. Not affiliated with or endorsed by Main Street Boulders or Flagstaff Climbing. All content and photos come from <a href="https://www.mainstreetboulders.com/">mainstreetboulders.com</a> (Oct 2026). Check prices and hours on the official site.</div>
+  </div>
+</footer>
+</body>
+</html>
