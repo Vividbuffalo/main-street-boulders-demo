@@ -44,16 +44,35 @@ img{display:block;max-width:100%}
  .drop a:active,.drop a:hover{background:var(--bg)}
  .drop a.wv{color:var(--g2)}
 }
-/* intro */
-.intro{background:var(--g);color:#fff;padding:12px 0}
-.intro h1{font-size:18px;line-height:1.3;font-weight:700}
-.intro h1 span{color:var(--o)}
-.chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
-.chip{font-size:12.5px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:99px;padding:2px 9px}
+/* hero banner */
+.hero{position:relative;background:#000;color:#fff;overflow:hidden}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%;opacity:.9}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.86) 0%,rgba(0,0,0,.72) 50%,rgba(0,0,0,.45) 100%)}
+.hero-in{position:relative;z-index:1;padding-top:26px;padding-bottom:24px;min-height:300px;display:flex;flex-direction:column;justify-content:center}
+.hero-logo{width:360px;max-width:80%;height:auto;margin-bottom:10px}
+.hero h1{font-size:20px;line-height:1.3;font-weight:700;max-width:680px;text-shadow:0 1px 3px rgba(0,0,0,.5)}
+.hero h1 span{color:var(--o)}
+.chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
+.chip{font-size:12.5px;background:rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.22);border-radius:99px;padding:2px 9px;backdrop-filter:blur(2px)}
 .chip b{color:var(--o);font-weight:650}
-.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-top:10px}
-.strip img{width:100%;height:84px;object-fit:cover;border-radius:5px}
-@media(max-width:640px){.strip img{height:64px}}
+.hero-acts{display:flex;gap:8px;margin-top:12px}
+.btn.light{background:#fff;color:var(--ink)}
+.btn.light:hover{background:var(--tan)}
+@media(max-width:640px){
+ .hero-in{min-height:0;padding-top:18px;padding-bottom:16px}
+ .hero::after{background:linear-gradient(180deg,rgba(0,0,0,.72),rgba(0,0,0,.8))}
+ .hero-logo{width:250px;margin-bottom:8px}
+ .hero h1{font-size:17px}
+}
+/* section photos */
+.split{display:grid;grid-template-columns:1fr 230px;gap:10px;align-items:stretch}
+.split>.pic{grid-column:2;grid-row:1;width:100%;height:100%;min-height:150px;max-height:300px;object-fit:cover;border-radius:var(--r)}
+.split>.main{grid-column:1;grid-row:1;min-width:0}
+@media(max-width:640px){
+ .split{grid-template-columns:1fr;gap:8px}
+ .split>.pic{grid-column:1;grid-row:1;height:120px;min-height:0}
+ .split>.main{grid-row:2}
+}
 /* collapsible sections */
 .sec{border-bottom:1px solid var(--line);scroll-margin-top:56px}
 .sec>summary{list-style:none;cursor:pointer;display:flex;align-items:baseline;gap:8px;padding:11px 0;font-size:16.5px;font-weight:700}
@@ -115,8 +134,10 @@ footer .demo{margin-top:6px;padding-top:8px;border-top:1px solid rgba(255,255,25
   </div>
 </header>
 
-<div class="intro" id="top">
-  <div class="w">
+<div class="hero" id="top">
+  <img class="hero-bg" src="img/banner-800.jpg" srcset="img/banner-800.jpg 800w, img/banner-1600.jpg 1600w" sizes="100vw" alt="" aria-hidden="true">
+  <div class="w hero-in">
+    <img class="hero-logo" src="img/logo-900.png" alt="Main Street Boulders, powered by Flagstaff Climbing" width="900" height="205">
     <h1>Bouldering &amp; training in Sunnyside, Flagstaff. <span>Premium members: 24/7.</span></h1>
     <div class="chips">
       <span class="chip"><b>Open</b> Tue–Thu 6–10 pm</span>
@@ -124,11 +145,9 @@ footer .demo{margin-top:6px;padding-top:8px;border-top:1px solid rgba(255,255,25
       <span class="chip"><b>Thu</b> $14 incl. shoes</span>
       <span class="chip">Sister gym of Flagstaff Climbing</span>
     </div>
-    <div class="strip">
-      <img src="img/room.jpg" alt="Main bouldering room">
-      <img src="img/boards.jpg" alt="Training board wall">
-      <img src="img/climber.jpg" alt="Climber on the bouldering wall">
-      <img src="img/workout.jpg" alt="Workout room">
+    <div class="hero-acts">
+      <a class="btn" href="https://www.waiverking.com/print/17145" target="_blank" rel="noopener">Sign waiver</a>
+      <a class="btn light" href="https://clients.mindbodyonline.com/classic/ws?studioid=31814&amp;stype=41&amp;sTG=48&amp;prodId=15142" target="_blank" rel="noopener">Day pass</a>
     </div>
   </div>
 </div>
@@ -137,7 +156,9 @@ footer .demo{margin-top:6px;padding-top:8px;border-top:1px solid rgba(255,255,25
 
 <details class="sec" id="amenities" open>
   <summary>Amenities</summary>
-  <div class="body">
+  <div class="body split">
+    <img class="pic" src="img/boards-600.jpg" alt="Board wall at Main Street Boulders" loading="lazy" width="600" height="450" style="object-position:center">
+    <div class="main">
     <div class="list">
       <details class="row"><summary><span class="n">Boards</span><span class="s">Kilter 12×12 · Kilter Fullride · Tension Board 2 · Moonboard · Campus</span></summary>
         <div class="in"><ul class="t">
@@ -167,11 +188,14 @@ footer .demo{margin-top:6px;padding-top:8px;border-top:1px solid rgba(255,255,25
         </ul></div></details>
     </div>
   </div>
+  </div>
 </details>
 
 <details class="sec" id="memberships" open>
   <summary>Memberships &amp; passes <small>as listed on mainstreetboulders.com</small></summary>
-  <div class="body">
+  <div class="body split">
+    <img class="pic" src="img/climber-600.jpg" alt="Climber on the bouldering wall" loading="lazy" width="600" height="450" style="object-position:center">
+    <div class="main">
     <div class="list">
       <details class="row"><summary><span class="n">Day pass</span><span class="s">open hours</span><span class="p">$18 + tax</span></summary>
         <div class="in"><p>Unlimited bouldering for one day during open hours (Tue–Thu 6–10 pm). Shoe rental is $5 + tax. Age 4 and under is $5 + tax.</p>
@@ -234,11 +258,14 @@ footer .demo{margin-top:6px;padding-top:8px;border-top:1px solid rgba(255,255,25
       </div>
     </details>
   </div>
+  </div>
 </details>
 
 <details class="sec" id="first-visit" open>
   <summary>First visit <small>no experience needed</small></summary>
-  <div class="body">
+  <div class="body split">
+    <img class="pic" src="img/room-600.jpg" alt="Main bouldering room" loading="lazy" width="600" height="450" style="object-position:center">
+    <div class="main">
     <ol class="steps">
       <li>Sign the waiver online or at the desk (a parent or guardian signs for under 18s).</li>
       <li>Come Tue–Thu 6–10 pm in athletic clothes. Shoes rent for $5.</li>
@@ -254,6 +281,7 @@ footer .demo{margin-top:6px;padding-top:8px;border-top:1px solid rgba(255,255,25
         <li>No smoking, alcohol or drugs. Watch for falling climbers</li>
       </ul></div>
     </details>
+  </div>
   </div>
 </details>
 
