@@ -19,21 +19,30 @@ img{display:block;max-width:100%}
 .top{position:sticky;top:0;z-index:10;background:var(--g);border-bottom:2px solid var(--o)}
 .top .w{display:flex;align-items:center;gap:12px;height:46px}
 .top .logo img{height:28px;width:auto}
-.top nav{display:flex;gap:2px;flex:1;overflow-x:auto;scrollbar-width:none}
+.top nav{display:flex;gap:2px;flex:1}
 .top nav::-webkit-scrollbar{display:none}
 .top nav a{color:#e9efe9;text-decoration:none;font-size:13.5px;font-weight:500;padding:5px 9px;border-radius:6px;white-space:nowrap}
 .top nav a:hover{background:rgba(255,255,255,.1);color:#fff}
 .btn{display:inline-block;background:var(--o);color:#1c1f1c;font-weight:650;font-size:13px;text-decoration:none;padding:6px 11px;border-radius:6px;white-space:nowrap}
 .btn:hover{background:var(--o2)}
 .btn.ghost{background:#fff;border:1px solid var(--line);color:var(--ink);padding:5px 10px}
-.subnav{display:none}
-@media(max-width:640px){
+.menu-btn{display:none;align-items:center;gap:6px;background:transparent;border:1px solid rgba(255,255,255,.3);color:#fff;font:600 13px/1 system-ui,sans-serif;padding:6px 9px;border-radius:6px;cursor:pointer}
+.menu-btn i{display:block;width:14px;height:2px;background:#fff;position:relative}
+.menu-btn i::before,.menu-btn i::after{content:"";position:absolute;left:0;width:14px;height:2px;background:#fff}
+.menu-btn i::before{top:-4px}.menu-btn i::after{top:4px}
+.menu-btn[aria-expanded=true] i{background:transparent}
+.menu-btn[aria-expanded=true] i::before{top:0;transform:rotate(45deg)}
+.menu-btn[aria-expanded=true] i::after{top:0;transform:rotate(-45deg)}
+.drop{display:none}
+@media(max-width:760px){
  .top .w{gap:8px;padding:0 10px}.top .logo img{height:22px}.top nav{display:none}
- .subnav{display:block;position:sticky;top:48px;z-index:9;background:#fff;border-bottom:1px solid var(--line)}
- .subnav .w{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding:6px 10px}
- .subnav .w::-webkit-scrollbar{display:none}
- .subnav a{font-size:13px;font-weight:550;color:var(--ink);text-decoration:none;padding:3px 10px;border:1px solid var(--line);border-radius:99px;white-space:nowrap}
- html{scroll-padding-top:90px}
+ .top .logo{flex:1;min-width:0}
+ .menu-btn{display:inline-flex}
+ .drop{position:absolute;left:0;right:0;top:100%;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 6px 14px rgba(0,0,0,.12)}
+ .drop.open{display:block}
+ .drop a{display:block;padding:10px 14px;font-size:14.5px;font-weight:600;color:var(--ink);text-decoration:none;border-top:1px solid #f0ebe3}
+ .drop a:active,.drop a:hover{background:var(--bg)}
+ .drop a.wv{color:var(--g2)}
 }
 /* intro */
 .intro{background:var(--g);color:#fff;padding:12px 0}
@@ -99,11 +108,12 @@ footer .demo{margin-top:6px;padding-top:8px;border-top:1px solid rgba(255,255,25
       <a href="#amenities">Amenities</a><a href="#memberships">Memberships</a><a href="#first-visit">First Visit</a><a href="#hours">Hours</a><a href="#locations">Locations</a>
     </nav>
     <a class="btn" style="margin-left:auto" href="https://www.waiverking.com/print/17145" target="_blank" rel="noopener">Sign waiver</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="drop"><i></i>Menu</button>
+  </div>
+  <div class="drop" id="drop">
+    <a href="#amenities">Amenities</a><a href="#memberships">Memberships</a><a href="#first-visit">First Visit</a><a href="#hours">Hours</a><a href="#locations">Locations</a>
   </div>
 </header>
-<div class="subnav"><div class="w">
-  <a href="#amenities">Amenities</a><a href="#memberships">Memberships</a><a href="#first-visit">First Visit</a><a href="#hours">Hours</a><a href="#locations">Locations</a>
-</div></div>
 
 <div class="intro" id="top">
   <div class="w">
@@ -283,6 +293,11 @@ footer .demo{margin-top:6px;padding-top:8px;border-top:1px solid rgba(255,255,25
   </div>
 </footer>
 <script>
+var mb=document.querySelector('.menu-btn'),dr=document.getElementById('drop');
+function setMenu(o){dr.classList.toggle('open',o);mb.setAttribute('aria-expanded',o);}
+mb.addEventListener('click',function(e){e.stopPropagation();setMenu(!dr.classList.contains('open'));});
+dr.addEventListener('click',function(){setMenu(false);});
+document.addEventListener('click',function(e){if(!dr.contains(e.target))setMenu(false);});
 // Menu taps open (and scroll to) the matching section
 document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(){var t=document.querySelector(a.getAttribute('href'));if(t&&t.tagName==='DETAILS')t.open=true;});});
 if(location.hash){var t=document.querySelector(location.hash);if(t&&t.tagName==='DETAILS')t.open=true;}
